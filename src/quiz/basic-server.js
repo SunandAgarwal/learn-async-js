@@ -48,10 +48,6 @@ const server = http.createServer((req, res) => {
             res.writeHead(400, { 'Content-Type': 'text/plain' });
             res.end('Incomplete parameters');
         }
-        else {
-            res.writeHead(404, { 'Content-Type': 'text/plain' });
-            res.end('Endpoint not found');
-        }
     } else {
         // If the request is for an unsupported endpoint, send a not found response
         res.writeHead(404, { 'Content-Type': 'text/plain' });

@@ -1,1 +1,4 @@
 Explain the code execution based on the order of the messages logged in src/quiz/promise-2darray.txt.
+
+We need to handle the promises returned by the sum2DArray function and console log the corresponding result or error returned.
+When we pass an array, the sum is returned after waiting for 0 seconds, while the second case throws an error because a string is passed.
