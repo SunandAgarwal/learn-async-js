@@ -26,13 +26,23 @@ const array2D = [
     [7, 8, 9]
 ];
 
-const rowProms = [];
-for(let i=0;i<array2D.length;i++) {
-    rowProms.push(sum2DArray(array2D, i));
+async function main() {
+   try{
+    const rowProms = [];
+    for(let i=0;i<array2D.length;i++) {
+        const res = await sum2DArray(array2D, i);
+        rowProms.push(res);
+    }
+
+    let sum = 0;
+    rowProms.forEach((res) => {
+        sum += res;
+    });
+    console.log(`Sum = ${sum}`);
+   }
+   catch(err) {
+    console.log(err);
+   }
 }
 
-Promise.all(rowProms).then((res) => {
-    let sum = 0;
-    res.forEach(rs => sum+=rs);
-    console.log(`Sum = ${sum}`);
-}) .catch(err => console.log(err));
+main();
